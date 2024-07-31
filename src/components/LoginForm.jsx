@@ -20,6 +20,7 @@ function LoginForm() {
       localStorage.setItem('accessToken', data.accessToken); // 토큰 저장
       setMessage('Login successful!');
       navigate('/'); // 로그인 성공 후 메인 페이지로 이동
+      window.location.reload(); // 페이지 새로고침
     } catch (error) {
       setMessage('Login failed. Please check your credentials and try again.');
     }

@@ -14,6 +14,7 @@ function Header({ isLoggedIn }) {
       await logout(); // 로그아웃 API 호출
       localStorage.removeItem('accessToken'); // localStorage에서 사용자 정보 제거
       navigate('/'); // 로그인 페이지로 리디렉션
+      window.location.reload(); // 페이지 새로고침
     } catch (error) {
       console.error('로그아웃 실패:', error); // 에러 로그 출력
       // 필요에 따라 사용자에게 에러 메시지 표시
@@ -30,7 +31,7 @@ function Header({ isLoggedIn }) {
           <>
             <Link to="/orders" className="btn btn-primary m-2">주문 목록 보기</Link>
             <Link to="/reservations" className="btn btn-secondary m-2">예약 내역 보기</Link>
-            <button className="btn btn-danger m-2" onClick={handleLogout}>로그아웃</button> {/* 로그아웃 버튼 추가 */}
+            <button className="btn btn-danger m-2" onClick={handleLogout}>로그아웃</button>
           </>
         ) : (
           <>
