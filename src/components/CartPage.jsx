@@ -71,11 +71,11 @@ const CartPage = () => {
     }
   };
 
-  const handleSelectItem = (itemId) => {
+  const handleSelectItem = (cartId) => {
     setSelectedItems((prevSelectedItems) =>
-      prevSelectedItems.includes(itemId)
-        ? prevSelectedItems.filter((id) => id !== itemId)
-        : [...prevSelectedItems, itemId]
+      prevSelectedItems.includes(cartId)
+        ? prevSelectedItems.filter((id) => id !== cartId)
+        : [...prevSelectedItems, cartId]
     );
   };
 
@@ -106,8 +106,8 @@ const CartPage = () => {
               <input
                 type="checkbox"
                 className="custom-checkbox"
-                checked={selectedItems.includes(item.itemId)}
-                onChange={() => handleSelectItem(item.itemId)}
+                checked={selectedItems.includes(item.cartId)}
+                onChange={() => handleSelectItem(item.cartId)}
                 style={{ marginRight: '10px' }}
               />
               <img src={item.imageUrl} alt={item.itemName} style={{ width: '80px', height: '80px', objectFit: 'cover', marginRight: '10px' }} />

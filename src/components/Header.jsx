@@ -41,7 +41,7 @@ function Header({ isLoggedIn }) {
           </>
         ) : (
           <>
-            <Link to="/login" className="btn btn-primary m-2">로그인</Link>
+            <Link to="/login" className="btn btn-outline-primary m-2">로그인</Link>
             <Link to="/signup" className="btn btn-secondary m-2">회원가입</Link>
           </>
         )}
