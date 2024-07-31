@@ -1,21 +1,29 @@
-/* src/components/PopupInfo.css */
+/* src/components/styles/PopupInfo.css */
 
-.card-img-top {
-    height: 300px;
-    object-fit: cover;
-  }
-  
-  .popup-images {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
-  .popup-image {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+.card-body hr {
+  margin: 20px 0;
+}
+
+.popup-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.popup-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.btn-outline-primary {
+  border-color: #071952;
+  color: #071952;
+}
+
+.btn-outline-primary:hover {
+  background-color: #071952;
+  color: white;
+}

@@ -55,7 +55,7 @@ function ReviewList({ popupId }) {
 
   return (
     <div className="reviews mt-4">
-      <h3>Reviews</h3>
+      <h3 className="reviews-title">리뷰</h3>
       {loading ? (
         <div>Loading reviews...</div>
       ) : error ? (

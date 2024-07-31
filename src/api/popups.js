@@ -29,3 +29,15 @@ export const getReviews = async (id , page = 0) => {
     throw error;
   }
 };
+
+export const likePopup = async (id) => {
+  try {
+    const response = await axiosInstance.post('/api/v1/likes', {
+      contentId: id,
+      contentType: 'popup'
+    });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
