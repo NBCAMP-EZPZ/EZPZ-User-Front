@@ -21,3 +21,12 @@ export const getOrderDetails = async (orderId) => {
       throw error;
     }
   };
+
+export const createOrder = async (orderData) => {
+    try {
+        const response = await axiosInstance.post('/api/v1/orders', orderData);
+        return response.data.data;
+    } catch (error) {
+        throw error;
+    }
+    }

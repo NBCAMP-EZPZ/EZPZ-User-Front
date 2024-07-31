@@ -2,9 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { getCartItems, updateCartItem, deleteCartItem } from '../api/cart';
+import { createOrder } from '../api/orders';
 import Modal from 'react-bootstrap/Modal';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../components/styles/CartPage.css'; // CSS 파일 임포트
 
 const primaryColor = '#071952';
 
@@ -15,6 +17,7 @@ const CartPage = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const [selectedItems, setSelectedItems] = useState([]);
 
   useEffect(() => {
     const fetchCartItems = async () => {
@@ -68,6 +71,23 @@ const CartPage = () => {
     }
   };
 
+  const handleSelectItem = (itemId) => {
+    setSelectedItems((prevSelectedItems) =>
+      prevSelectedItems.includes(itemId)
+        ? prevSelectedItems.filter((id) => id !== itemId)
+        : [...prevSelectedItems, itemId]
+    );
+  };
+
+  const handleOrderClick = async () => {
+    try {
+      await createOrder({ cartIdRequestList: selectedItems.map((id) => ({ cartId: id })) });
+      alert('주문이 완료되었습니다.');
+    } catch (error) {
+      setError('주문 실패: ' + error.message);
+    }
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -83,6 +103,13 @@ const CartPage = () => {
         {cartItems.map(item => (
           <div key={item.itemId} className="list-group-item d-flex justify-content-between align-items-center">
             <div className="d-flex align-items-center">
+              <input
+                type="checkbox"
+                className="custom-checkbox"
+                checked={selectedItems.includes(item.itemId)}
+                onChange={() => handleSelectItem(item.itemId)}
+                style={{ marginRight: '10px' }}
+              />
               <img src={item.imageUrl} alt={item.itemName} style={{ width: '80px', height: '80px', objectFit: 'cover', marginRight: '10px' }} />
               <div>
                 <p>상품명 : {item.itemName}</p>
@@ -130,6 +157,15 @@ const CartPage = () => {
           </Modal.Body>
         </Modal>
       )}
+      <div className="d-flex justify-content-end mt-3">
+        <button
+          className="btn btn-success"
+          onClick={handleOrderClick}
+          style={{ backgroundColor: primaryColor, color: '#fff' }}
+        >
+          주문하기
+        </button>
+      </div>
     </div>
   );
 };
