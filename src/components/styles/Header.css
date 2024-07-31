@@ -24,7 +24,8 @@
 }
 
 .dropdown-menu {
-  right: 0; /* 드롭다운 메뉴를 오른쪽에 정렬 */
+  right: 0;
+  /* 드롭다운 메뉴를 오른쪽에 정렬 */
 }
 
 .btn-outline-primary {
@@ -47,7 +48,8 @@
 
 .btn-primary:hover {
   color: var(--white-color);
-  background-color: #051640; /* primary-color 보다 약간 어둡게 */
+  background-color: #051640;
+  /* primary-color 보다 약간 어둡게 */
   border-color: #051640;
 }
 
@@ -59,7 +61,8 @@
 
 .btn-secondary:hover {
   color: var(--white-color);
-  background-color: #48a7c7; /* secondary-color 보다 약간 어둡게 */
+  background-color: #48a7c7;
+  /* secondary-color 보다 약간 어둡게 */
   border-color: #48a7c7;
 }
 
@@ -71,6 +74,7 @@
 
 .btn-danger:hover {
   color: var(--white-color);
-  background-color: #c9302c; /* danger-color 보다 약간 어둡게 */
+  background-color: #c9302c;
+  /* danger-color 보다 약간 어둡게 */
   border-color: #c9302c;
 }

@@ -8,7 +8,6 @@ import Modal from 'react-bootstrap/Modal';
 import { FaSmile } from 'react-icons/fa';
 import Pagination from 'react-bootstrap/Pagination';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../components/styles/SlotList.css';
 
 const primaryColor = '#071952';
 
