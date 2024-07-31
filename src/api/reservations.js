@@ -1,7 +1,6 @@
-// src/api/reservations.js
-
 import axiosInstance from './axiosInstance';
 
+// 예약 목록을 가져오는 API
 export const getReservations = async (status, page = 0) => {
   try {
     const response = await axiosInstance.get('/api/v1/reservations', {
@@ -13,6 +12,7 @@ export const getReservations = async (status, page = 0) => {
   }
 };
 
+// 예약 상세 정보를 가져오는 API
 export const getReservationDetails = async (reservationId) => {
   try {
     const response = await axiosInstance.get(`/api/v1/reservations/${reservationId}`);
@@ -22,6 +22,7 @@ export const getReservationDetails = async (reservationId) => {
   }
 };
 
+// 예약 생성 API
 export const createReservation = async (reservationData) => {
   try {
     const response = await axiosInstance.post('/api/v1/reservations', reservationData);
