@@ -1,0 +1,43 @@
+/* src/components/Header.css */
+
+.header {
+    background-color: #071952; /* 대표 색상 */
+    color: #fff;
+  }
+  
+  .header-title {
+    color: #fff;
+  }
+  
+  .header .btn-primary {
+    background-color: #37B7C3; /* 두 번째 대표 색상 */
+    border-color: #37B7C3;
+  }
+  
+  .header .btn-secondary {
+    background-color: #EBF4F6; /* 세 번째 대표 색상 */
+    color: #071952;
+    border-color: #EBF4F6;
+  }
+  
+  .header .btn-primary:hover,
+  .header .btn-primary:focus {
+    background-color: #2d9ba5; /* 버튼 호버 색상 */
+    border-color: #2d9ba5;
+  }
+  
+  .header .btn-secondary:hover,
+  .header .btn-secondary:focus {
+    background-color: #dbe4e6; /* 버튼 호버 색상 */
+    border-color: #dbe4e6;
+    color: #071952;
+  }
+
+  .header-link {
+    text-decoration: none;
+    color: #ffffff; /* 링크 색상 */
+  }
+  
+  .btn {
+    font-size: 0.875rem; /* 버튼 폰트 크기 조절 */
+  }

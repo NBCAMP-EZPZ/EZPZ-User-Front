@@ -1,0 +1,22 @@
+/* src/components/ReviewList.css */
+
+.review {
+    background-color: #f9f9f9;
+  }
+  
+  .review p {
+    margin: 0;
+  }
+  
+  .review-stars {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .pagination-btn {
+    min-width: 50px;
+    height: 40px;
+    margin: 0 2px;
+    font-size: 1rem;
+    border: none; /* 테두리 제거 */
+  }

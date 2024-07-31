@@ -1,0 +1,37 @@
+/* src/components/LoginForm.css */
+
+body {
+    background-color: #ebf4f6;
+  }
+  
+  .custom-card {
+    max-width: 400px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+  }
+  
+  .card-title {
+    color: #071952;
+  }
+  
+  .form-label {
+    color: #071952;
+  }
+  
+  .form-control {
+    border: 1px solid #37b7c3;
+    border-radius: 5px;
+  }
+  
+  .custom-btn {
+    background-color: #071952;
+    border: none;
+    color: #ffffff;
+  }
+  
+  .custom-btn:hover {
+    background-color: #37b7c3;
+    color: #ffffff;
+  }

@@ -1,0 +1,64 @@
+/* src/components/PopupList.css */
+
+.popup-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.popup-card {
+  width: 300px;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-btn {
+  min-width: 50px;
+  height: 40px;
+  margin: 0 2px;
+  font-size: 1rem;
+  border: none; /* 테두리 제거 */
+}
+
+.pagination-btn.btn-current {
+  background-color: #071952;
+  color: #fff;
+}
+
+/* src/components/PopupList.css */
+
+.custom-dropdown {
+  max-width: 200px; /* 원하는 최대 너비 설정 */
+}
+
+.custom-dropdown select {
+  font-size: 0.875rem; /* 폰트 크기 조절 */
+}
+
+.title-spacing {
+  margin-top: 40px; /* 제목 위쪽에 여백 추가 */
+  margin-bottom: 20px; /* 제목 아래쪽 여백 */
+}
+
+.popup-list .popup-card {
+  cursor: pointer; /* 커서가 포인터로 변경되어 클릭 가능하게 함 */
+}
+
+.pagination-btn {
+  margin: 0 2px; /* 버튼 사이의 간격을 조절 */
+}
+
+.btn-current {
+  background-color: #071952; /* 현재 페이지 버튼 색상 */
+  color: #fff;
+}
