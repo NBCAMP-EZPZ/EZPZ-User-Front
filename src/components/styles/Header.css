@@ -1,43 +1,76 @@
-/* src/components/Header.css */
+:root {
+  --primary-color: #071952;
+  --secondary-color: #5bc0de;
+  --danger-color: #d9534f;
+  --white-color: #ffffff;
+}
 
 .header {
-    background-color: #071952; /* 대표 색상 */
-    color: #fff;
-  }
-  
-  .header-title {
-    color: #fff;
-  }
-  
-  .header .btn-primary {
-    background-color: #37B7C3; /* 두 번째 대표 색상 */
-    border-color: #37B7C3;
-  }
-  
-  .header .btn-secondary {
-    background-color: #EBF4F6; /* 세 번째 대표 색상 */
-    color: #071952;
-    border-color: #EBF4F6;
-  }
-  
-  .header .btn-primary:hover,
-  .header .btn-primary:focus {
-    background-color: #2d9ba5; /* 버튼 호버 색상 */
-    border-color: #2d9ba5;
-  }
-  
-  .header .btn-secondary:hover,
-  .header .btn-secondary:focus {
-    background-color: #dbe4e6; /* 버튼 호버 색상 */
-    border-color: #dbe4e6;
-    color: #071952;
-  }
+  background-color: var(--primary-color);
+}
 
-  .header-link {
-    text-decoration: none;
-    color: #ffffff; /* 링크 색상 */
-  }
-  
-  .btn {
-    font-size: 0.875rem; /* 버튼 폰트 크기 조절 */
-  }
+.header-title {
+  color: var(--white-color);
+}
+
+.header-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu {
+  right: 0; /* 드롭다운 메뉴를 오른쪽에 정렬 */
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  background-color: var(--white-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  color: var(--white-color);
+  background-color: #051640; /* primary-color 보다 약간 어둡게 */
+  border-color: #051640;
+}
+
+.btn-secondary {
+  color: var(--white-color);
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+  color: var(--white-color);
+  background-color: #48a7c7; /* secondary-color 보다 약간 어둡게 */
+  border-color: #48a7c7;
+}
+
+.btn-danger {
+  color: var(--white-color);
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+}
+
+.btn-danger:hover {
+  color: var(--white-color);
+  background-color: #c9302c; /* danger-color 보다 약간 어둡게 */
+  border-color: #c9302c;
+}
