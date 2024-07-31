@@ -1,7 +1,7 @@
 // src/components/PopupInfo.jsx
 
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { getPopupDetail, likePopup } from '../api/popups';
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -18,6 +18,7 @@ function PopupInfo() {
   const [showModal, setShowModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState('');
   const [liked, setLiked] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPopupDetail = async () => {
@@ -86,11 +87,23 @@ function PopupInfo() {
             ))}
           </div>
           <div className="d-flex justify-content-end mt-3">
-          <button className="btn btn-outline-gray me-2" onClick={handleLike} disabled={liked}>
-            <FaHeart style={{ color: liked ? 'red' : 'gray' }} /> 좋아요
-          </button>
-            <Link to="/goods" className="btn btn-primary me-2" style={{ backgroundColor: primaryColor }}>굿즈 페이지</Link>
-            <Link to="/reservations" className="btn btn-primary" style={{ backgroundColor: primaryColor }}>예약 페이지</Link>
+            <button className="btn btn-outline-gray me-2" onClick={handleLike} disabled={liked}>
+              <FaHeart style={{ color: liked ? 'red' : 'gray' }} /> 좋아요
+            </button>
+            <button
+              className="btn btn-primary me-2"
+              style={{ backgroundColor: primaryColor }}
+              onClick={() => navigate(`/popup/${id}/items`)}
+            >
+              굿즈 페이지
+            </button>
+            <button
+              className="btn btn-primary"
+              style={{ backgroundColor: primaryColor }}
+              onClick={() => navigate(`/popup/${id}/reservations`)}
+            >
+              예약 페이지
+            </button>
           </div>
         </div>
       </div>

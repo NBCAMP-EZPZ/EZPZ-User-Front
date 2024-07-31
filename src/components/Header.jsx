@@ -29,8 +29,8 @@ function Header({ isLoggedIn }) {
       <nav>
         {isLoggedIn ? (
           <>
-            <Link to="/orders" className="btn btn-primary m-2">주문 목록 보기</Link>
-            <Link to="/reservations" className="btn btn-secondary m-2">예약 내역 보기</Link>
+            <Link to="/user/orders" className="btn btn-primary m-2">주문 목록 보기</Link>
+            <Link to="/user/reservations" className="btn btn-secondary m-2">예약 내역 보기</Link>
             <button className="btn btn-danger m-2" onClick={handleLogout}>로그아웃</button>
           </>
         ) : (

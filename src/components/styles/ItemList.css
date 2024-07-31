@@ -1,0 +1,40 @@
+/* src/components/styles/ItemList.css */
+
+.item-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .item-card {
+    width: calc(25% - 1rem);
+    margin-bottom: 1rem;
+  }
+  
+  .card-img-top {
+    max-height: 150px;
+    object-fit: cover;
+  }
+  
+  .custom-dropdown {
+    max-width: 200px;
+  }
+  
+  .pagination-btn {
+    min-width: 50px;
+    height: 40px;
+    margin: 0 2px;
+    font-size: 1rem;
+    border: none;
+    transition: background-color 0.3s;
+  }
+  
+  .pagination-btn:hover {
+    background-color: #071952;
+    color: #fff;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+  }
