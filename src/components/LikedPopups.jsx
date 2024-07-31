@@ -1,5 +1,3 @@
-// src/components/LikedPopups.jsx
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // useNavigate 훅 추가
 import { getLikedPopups } from '../api/liked';

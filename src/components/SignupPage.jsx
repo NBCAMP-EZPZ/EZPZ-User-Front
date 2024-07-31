@@ -1,5 +1,3 @@
-// src/components/SignupPage.jsx
-
 import React from 'react';
 import SignupForm from './SignupForm';
 

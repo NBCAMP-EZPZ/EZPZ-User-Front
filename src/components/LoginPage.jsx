@@ -1,5 +1,3 @@
-// src/components/LoginPage.jsx
-
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import LoginForm from './LoginForm';

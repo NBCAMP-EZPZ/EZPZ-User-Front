@@ -1,13 +1,9 @@
-// src/components/PopupList.jsx
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getPopups } from '../api/popups';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components/styles/PopupList.css';
 import Pagination from 'react-bootstrap/Pagination'; // Pagination 컴포넌트 추가
-
-const primaryColor = '#071952';
 
 function PopupList() {
   const [popups, setPopups] = useState([]);
@@ -74,8 +70,8 @@ function PopupList() {
       </div>
       <div className="popup-list">
         {popups.map((popup) => (
-          <div 
-            key={popup.popupId} 
+          <div
+            key={popup.popupId}
             className="popup-card card mb-3 shadow-sm"
             onClick={() => handleCardClick(popup.popupId)}
             style={{ cursor: 'pointer' }}

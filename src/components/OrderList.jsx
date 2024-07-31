@@ -6,9 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components/styles/OrderList.css';
 import Pagination from 'react-bootstrap/Pagination'; // Pagination 컴포넌트 추가
 
-
-const primaryColor = '#071952';
-
 function OrderList() {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
