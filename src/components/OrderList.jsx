@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getOrders } from '../api/orders';
+import OrderModal from './OrderModal';
+import OrderDetail from './OrderDetail';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components/styles/OrderList.css';
 
@@ -11,6 +13,8 @@ function OrderList() {
   const [error, setError] = useState(null);
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
+  const [selectedOrderId, setSelectedOrderId] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const fetchOrders = async () => {
@@ -34,6 +38,16 @@ function OrderList() {
     if (newPage >= 0 && newPage < totalPages) {
       setPage(newPage);
     }
+  };
+
+  const handleCardClick = (orderId) => {
+    setSelectedOrderId(orderId);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSelectedOrderId(null);
   };
 
   const getStatusText = (status) => {
@@ -62,7 +76,7 @@ function OrderList() {
         <p>주문 목록이 없습니다!</p>
       ) : (
         orders.map((order, index) => (
-          <div key={index} className="order mb-3 p-3 border rounded">
+          <div key={index} className="order mb-3 p-3 border rounded" onClick={() => handleCardClick(order.orderId)}>
             <p><strong>주문번호:</strong> {order.orderId}</p>
             <p><strong>총액:</strong> {order.totalPrice}</p>
             <p><strong>상태:</strong> {getStatusText(order.orderStatus)}</p>
@@ -101,6 +115,9 @@ function OrderList() {
           다음
         </button>
       </div>
+      <OrderModal show={showModal} handleClose={handleCloseModal}>
+        {selectedOrderId && <OrderDetail orderId={selectedOrderId} />}
+      </OrderModal>
     </div>
   );
 }

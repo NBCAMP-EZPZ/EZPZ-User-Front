@@ -12,3 +12,12 @@ export const getOrders = async (page = 0) => {
     throw error;
   }
 };
+
+export const getOrderDetails = async (orderId) => {
+    try {
+      const response = await axiosInstance.get(`/api/v1/orders/${orderId}`);
+      return response.data.data;
+    } catch (error) {
+      throw error;
+    }
+  };
