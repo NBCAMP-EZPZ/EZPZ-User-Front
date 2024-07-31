@@ -31,3 +31,13 @@ export const createReservation = async (reservationData) => {
     throw error;
   }
 };
+
+// 예약 삭제 API
+export const cancelReservation = async (reservationId) => {
+  try {
+    const response = await axiosInstance.patch(`/api/v1/reservations/${reservationId}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

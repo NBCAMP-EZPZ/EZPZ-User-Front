@@ -32,3 +32,12 @@
   font-size: 0.875rem;
   /* 폰트 크기 조절 */
 }
+
+.review-button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #071952;
+  color: white;
+}
