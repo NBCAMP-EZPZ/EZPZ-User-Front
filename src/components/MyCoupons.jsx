@@ -19,7 +19,7 @@ function MyCoupons() {
                 setCoupons(data.content);
                 setTotalPages(data.totalPages);
             } catch (error) {
-                setError(error.message);
+                setError("다운 받은 쿠폰이 없습니다 :)");
             } finally {
                 setLoading(false);
             }

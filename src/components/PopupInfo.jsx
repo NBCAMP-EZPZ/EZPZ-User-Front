@@ -25,7 +25,7 @@ function PopupInfo() {
                 setPopup(data);
                 setLoading(false);
             } catch (error) {
-                setError(error.message);
+                setError('팝업 정보를 불러오는 데 실패했습니다 :(');
                 setLoading(false);
             }
         };
@@ -50,11 +50,11 @@ function PopupInfo() {
     };
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div>로딩 중...</div>;
     }
 
     if (error) {
-        return <div>Error: {error}</div>;
+        return <div>{error}</div>;
     }
 
     return (
@@ -70,7 +70,7 @@ function PopupInfo() {
                     <p className="card-text"><strong>주소:</strong> {popup.address}</p>
                     <p className="card-text"><strong>시작 날짜:</strong> {new Date(popup.startDate).toLocaleString()}</p>
                     <p className="card-text"><strong>종료 날짜:</strong> {new Date(popup.endDate).toLocaleString()}</p>
-                    <p className="card-text"><strong>좋아요 수:</strong> {popup.likeCount}</p>
+                    <p className="card-text"><strong>좋아요 ♥︎ </strong> {popup.likeCount} 개</p>
 
                     <div className="popup-images">
                         {popup.images.map((image, index) => (

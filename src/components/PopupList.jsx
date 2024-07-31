@@ -9,7 +9,7 @@ function PopupList() {
   const [popups, setPopups] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [popupStatus, setPopupStatus] = useState('all');
+  const [popupStatus, setPopupStatus] = useState('in_progress');
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ function PopupList() {
         setTotalPages(data.totalPages);
         setLoading(false);
       } catch (error) {
-        setError(error.message);
+        setError("팝업이 없습니다 :)");
         setLoading(false);
       }
     };
@@ -44,11 +44,11 @@ function PopupList() {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>로딩 중...</div>;
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div>{error}</div>;
   }
 
   const currentPageGroup = Math.floor(page / 10);
@@ -61,7 +61,6 @@ function PopupList() {
       <div className="row mb-4">
         <div className="col">
           <select className="form-select custom-dropdown" value={popupStatus} onChange={handleStatusChange}>
-            <option value="all">전체 보기</option>
             <option value="in_progress">진행 중</option>
             <option value="scheduled">오픈 전</option>
             <option value="completed">종료</option>
@@ -79,8 +78,8 @@ function PopupList() {
             <img src={popup.thumbnailUrl} className="card-img-top" alt={popup.name} />
             <div className="card-body">
               <h5 className="card-title">{popup.name}</h5>
-              <p className="card-text">Company: {popup.companyName}</p>
-              <p className="card-text">Likes: {popup.likeCount}</p>
+              <p className="card-text">주최: {popup.companyName}</p>
+              <p className="card-text">좋아요 ♥︎ {popup.likeCount} 개</p>
             </div>
           </div>
         ))}

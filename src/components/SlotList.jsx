@@ -44,7 +44,7 @@ const SlotList = () => {
                 setSlots(data.content);
                 setTotalPages(data.totalPages);
             } catch (error) {
-                setError('예약 목록 조회 실패: ' + error.message);
+                setError('예약 가능 내역이 없습니다 :)');
             } finally {
                 setLoading(false);
             }
@@ -59,7 +59,7 @@ const SlotList = () => {
             alert('예약이 완료되었습니다.');
             navigate('/user/reservations'); // 예약 내역 보기 페이지로 이동
         } catch (error) {
-            alert('예약 실패: ' + (error.response ? error.response.data.message : error.message));
+            alert('예약에 실패했습니다 :(' + (error.response ? error.response.data.message : error.message));
         }
     };
 

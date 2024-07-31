@@ -20,7 +20,7 @@ function ItemList() {
     const [error, setError] = useState(null);
     const [page, setPage] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
-    const [status, setStatus] = useState(searchParams.get('status') || 'all');
+    const [status, setStatus] = useState(searchParams.get('status') || 'SALE');
     const [selectedItem, setSelectedItem] = useState(null);
     const [showModal, setShowModal] = useState(false);
 
@@ -33,7 +33,7 @@ function ItemList() {
                 setItems(data.content);
                 setTotalPages(data.totalPages);
             } catch (error) {
-                setError("Request failed with status code " + (error.response ? error.response.status : error.message));
+                setError("상품이 없습니다 :)");
             } finally {
                 setLoading(false);
             }
@@ -84,9 +84,9 @@ function ItemList() {
     const handleAddToCart = async (cartItem) => {
         try {
             await addToCart(cartItem);
-            alert('Item added to cart!');
+            alert('장바구니 추가 완료!');
         } catch (error) {
-            alert('Failed to add item to cart.');
+            alert('장바구니 추가 실패 :(');
         }
     };
 
@@ -108,11 +108,9 @@ function ItemList() {
                         value={status}
                         onChange={handleStatusChange}
                     >
-                        <option value="all">전체 보기</option>
                         <option value="BEFORE_SALE">판매 전</option>
                         <option value="SALE">판매 중</option>
                         <option value="SOLD_OUT">품절</option>
-                        <option value="SALE_END">판매 종료</option>
                     </select>
                 </div>
             </div>
@@ -136,7 +134,7 @@ function ItemList() {
                             <div className="card-body">
                                 <h5 className="card-title">{item.name}</h5>
                                 <p className="card-text">가격: {item.price}원</p>
-                                <p className="card-text">좋아요: {item.likeCount}</p>
+                                <p className="card-text">좋아요 ♥︎ {item.likeCount} 개</p>
                                 <p className="card-text">상태: {getStatusText(item.itemStatus)}</p>
                             </div>
                         </div>

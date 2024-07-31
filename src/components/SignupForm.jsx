@@ -45,7 +45,7 @@ function SignupForm() {
             if (error.message) {
                 setMessage(error.message); // 서버에서 받은 에러 메시지를 설정
             } else {
-                setMessage('Signup failed. Please check your information and try again.');
+                setMessage('회원가입에 실패했습니다 :(');
             }
         }
     };

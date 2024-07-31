@@ -21,7 +21,7 @@ const LikedPopups = () => {
         setPopups(data.content);
         setTotalPages(data.totalPages);
       } catch (error) {
-        setError('좋아요 누른 팝업 조회 실패: ' + error.message);
+        setError('좋아요 누른 팝업이 없습니다 :) ');
       } finally {
         setLoading(false);
       }

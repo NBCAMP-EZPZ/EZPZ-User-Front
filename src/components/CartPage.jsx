@@ -23,7 +23,7 @@ const CartPage = () => {
                 const data = await getCartItems();
                 setCartItems(data);
             } catch (error) {
-                setError('장바구니 조회 실패: ' + error.message);
+                setError('장바구니가 비어 있습니다 :)');
             } finally {
                 setLoading(false);
             }
@@ -81,6 +81,7 @@ const CartPage = () => {
         try {
             await createOrder({ cartIdRequestList: selectedItems.map((id) => ({ cartId: id })) });
             alert('주문이 완료되었습니다.');
+            window.location.reload(); // 화면 새로고침
         } catch (error) {
             setError('주문 실패: ' + error.message);
         }

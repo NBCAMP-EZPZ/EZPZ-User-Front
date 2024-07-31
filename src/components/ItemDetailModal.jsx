@@ -31,7 +31,7 @@ const ItemDetailModal = ({ show, handleClose, item, handleAddToCart }) => {
             await likeItem(item.id);
             setLiked(true);
         } catch (error) {
-            console.error('Failed to like the item:', error);
+            console.error('아이템 좋아요 실패 :(', error);
         }
     };
 

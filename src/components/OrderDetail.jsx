@@ -40,7 +40,7 @@ const OrderDetail = ({ orderId }) => {
     }, [orderId]);
 
     if (loading) {
-        return <div>Loading order details...</div>;
+        return <div>로딩 중...</div>;
     }
 
     if (error) {
@@ -48,7 +48,7 @@ const OrderDetail = ({ orderId }) => {
     }
 
     if (!order) {
-        return <div>No order details available.</div>;
+        return <div>주문 상세 정보가 없습니다</div>;
     }
 
     return (

@@ -28,7 +28,7 @@ const ReservationDetail = ({ reservationId }) => {
                 const data = await getReservationDetails(reservationId);
                 setReservation(data);
             } catch (error) {
-                setError("Request failed with status code " + (error.response ? error.response.status : error.message));
+                setError("예약 내역이 없습니다 :) ");
             } finally {
                 setLoading(false);
             }
@@ -38,7 +38,7 @@ const ReservationDetail = ({ reservationId }) => {
     }, [reservationId]);
 
     if (loading) {
-        return <div>Loading reservation details...</div>;
+        return <div>로딩 중...</div>;
     }
 
     if (error) {
@@ -46,7 +46,7 @@ const ReservationDetail = ({ reservationId }) => {
     }
 
     if (!reservation) {
-        return <div>No reservation details available.</div>;
+        return <div>예약 상세 내역이 없습니다</div>;
     }
 
     return (

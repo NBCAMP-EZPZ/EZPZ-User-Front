@@ -23,11 +23,7 @@ function ReviewList({ popupId }) {
                 setReviews(data.content);
                 setTotalPages(data.totalPages);
             } catch (error) {
-                if (error.response && error.response.data.errorType === "EMPTY_PAGE_ELEMENTS") {
-                    setError("리뷰가 없습니다!");
-                } else {
-                    setError("Request failed with status code " + (error.response ? error.response.status : error.message));
-                }
+                setError("리뷰가 없습니다 :)");
             } finally {
                 setLoading(false);
             }
@@ -58,7 +54,7 @@ function ReviewList({ popupId }) {
             {loading ? (
                 <div>Loading reviews...</div>
             ) : error ? (
-                <div>{error}</div>
+                <div className="error-message">{error}</div>
             ) : reviews.length === 0 ? (
                 <p>리뷰가 없습니다!</p>
             ) : (

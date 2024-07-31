@@ -34,7 +34,7 @@ function CouponList() {
             const response = await downloadCoupon(couponId);
             alert(response.msg); // 서버에서 받은 메시지를 alert로 표시
         } catch (error) {
-            alert('쿠폰 다운로드 실패: ' + (error.response ? error.response.data.message : error.message));
+            alert('쿠폰 다운로드 실패');
         }
     };
 

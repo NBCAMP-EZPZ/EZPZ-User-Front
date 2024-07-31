@@ -33,7 +33,7 @@ function ReservationList() {
         setReservations(data.content);
         setTotalPages(data.totalPages);
       } catch (error) {
-        setError("Request failed with status code " + (error.response ? error.response.status : error.message));
+        setError("예약 내역이 없습니다 :)");
       } finally {
         setLoading(false);
       }
@@ -84,10 +84,10 @@ function ReservationList() {
         rating: reviewRating,
         content: reviewContent
       });
-      alert('리뷰가 등록되었습니다.');
+      alert('리뷰가 등록되었습니다 :)');
       handleCloseReviewModal();
     } catch (error) {
-      alert('리뷰 등록 실패: ' + (error.response ? error.response.data.message : error.message));
+      alert('리뷰 등록에 실패했습니다 :(');
     }
   };
 
@@ -97,7 +97,7 @@ function ReservationList() {
       alert('예약이 취소되었습니다.');
       setReservations(reservations.filter(reservation => reservation.id !== reservationId));
     } catch (error) {
-      alert('예약 취소 실패: ' + (error.response ? error.response.data.message : error.message));
+      alert('예약 취소에 실패했습니다 :(');
     }
   };
 

@@ -26,7 +26,7 @@ function OrderList() {
         setOrders(data.content);
         setTotalPages(data.totalPages);
       } catch (error) {
-        setError("Request failed with status code " + (error.response ? error.response.status : error.message));
+        setError("주문 내역이 없습니다 :)");
       } finally {
         setLoading(false);
       }
@@ -57,7 +57,7 @@ function OrderList() {
       alert('주문이 취소되었습니다.');
       setOrders(orders.filter(order => order.orderId !== orderId));
     } catch (error) {
-      alert('주문 취소 실패: ' + (error.response ? error.response.data.message : error.message));
+      alert('주문 취소에 실패했습니다 :(' + (error.response ? error.response.data.message : error.message));
     }
   };
 

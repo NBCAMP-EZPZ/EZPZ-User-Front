@@ -21,7 +21,7 @@ const LikedItems = () => {
                 setItems(data.content);
                 setTotalPages(data.totalPages);
             } catch (error) {
-                setError('좋아요 누른 아이템 조회 실패: ' + error.message);
+                setError('좋아요 누른 아이템이 없습니다 :)');
             } finally {
                 setLoading(false);
             }
@@ -43,7 +43,7 @@ const LikedItems = () => {
         <div className="container mt-4">
             <h3>좋아요 누른 아이템 목록</h3>
             {loading ? (
-                <div>Loading...</div>
+                <div>로딩 중...</div>
             ) : error ? (
                 <div>{error}</div>
             ) : items.length === 0 ? (
