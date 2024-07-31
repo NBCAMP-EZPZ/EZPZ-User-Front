@@ -10,6 +10,9 @@ import ReservationList from './components/ReservationList';
 import ItemList from './components/ItemList';
 import CartPage from './components/CartPage';
 import SlotList from './components/SlotList';
+import CouponList from './components/CouponList';
+import MyCoupons from './components/MyCoupons';
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // 로그인 상태 관리
@@ -31,10 +34,12 @@ function App() {
         <Route path="/signup" element={<SignupForm />} />
         <Route path="/popup/:id" element={<PopupDetail />} />
         <Route path="/user/orders" element={<OrderList />} />
+        <Route path="/user/coupons" element={<MyCoupons />} />
         <Route path="/user/reservations" element={<ReservationList />} />
         <Route path="/popup/:id/items" element={<ItemList />} />
         <Route path="/popup/:id/slots" element={<SlotList />} />
         <Route path="/cart" element={<CartPage/>} />
+        <Route path="/coupons" element={<CouponList />} />
       </Routes>
     </Router>
   );
