@@ -21,3 +21,12 @@ export const getReservationDetails = async (reservationId) => {
     throw error;
   }
 };
+
+export const createReservation = async (reservationData) => {
+  try {
+    const response = await axiosInstance.post('/api/v1/reservations', reservationData);
+    return response.data.data;
+  } catch (error) {
+    throw error;
+  }
+};
