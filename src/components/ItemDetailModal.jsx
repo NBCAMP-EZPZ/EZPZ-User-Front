@@ -1,13 +1,21 @@
-// src/components/ItemDetailModal.jsx
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
+import { FaHeart } from 'react-icons/fa';
+import { likeItem } from '../api/items'; // 좋아요 API 호출 함수 추가
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const primaryColor = '#071952';
 
 const ItemDetailModal = ({ show, handleClose, item, handleAddToCart }) => {
   const [quantity, setQuantity] = useState(1);
+  const [liked, setLiked] = useState(false);
+
+  useEffect(() => {
+    if (!show) {
+      setLiked(false);
+      setQuantity(1);
+    }
+  }, [show]);
 
   const handleQuantityChange = (e) => {
     setQuantity(e.target.value);
@@ -16,6 +24,15 @@ const ItemDetailModal = ({ show, handleClose, item, handleAddToCart }) => {
   const handleAddClick = () => {
     handleAddToCart({ itemId: item.id, quantity: parseInt(quantity, 10) });
     handleClose();
+  };
+
+  const handleLike = async () => {
+    try {
+      await likeItem(item.id);
+      setLiked(true);
+    } catch (error) {
+      console.error('Failed to like the item:', error);
+    }
   };
 
   if (!item) return null;
@@ -33,9 +50,14 @@ const ItemDetailModal = ({ show, handleClose, item, handleAddToCart }) => {
         <p><strong>재고:</strong> {item.stock}</p>
         <p><strong>좋아요:</strong> {item.likeCount}</p>
         <p><strong>상태:</strong> {item.itemStatus}</p>
+        <div className="d-flex justify-content-end mb-3">
+          <button className="btn btn-outline-gray" onClick={handleLike} disabled={liked}>
+            <FaHeart style={{ color: liked ? 'red' : 'gray' }} /> 좋아요
+          </button>
+        </div>
         <hr />
         <div className="d-flex justify-content-between align-items-center mt-3">
-          <label>수량:</label>  
+          <label>수량:</label>
           <input
             type="number"
             className="form-control flex-grow-1"

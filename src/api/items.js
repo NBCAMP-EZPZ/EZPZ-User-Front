@@ -24,3 +24,15 @@ export const getItemDetail = async (id) => {
         throw error;
     }
 };
+
+export const likeItem = async (itemId) => {
+    try {
+      const response = await axiosInstance.post(`/api/v1/likes`, {
+        contentId: itemId,
+        contentType: 'item'
+      });
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  };
