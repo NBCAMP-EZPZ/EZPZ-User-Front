@@ -12,6 +12,8 @@ import CartPage from './components/CartPage';
 import SlotList from './components/SlotList';
 import CouponList from './components/CouponList';
 import MyCoupons from './components/MyCoupons';
+import LikedPopups from './components/LikedPopups'; // 추가된 컴포넌트 임포트
+import LikedItems from './components/LikedItems'; 
 
 
 function App() {
@@ -40,6 +42,8 @@ function App() {
         <Route path="/popup/:id/slots" element={<SlotList />} />
         <Route path="/cart" element={<CartPage/>} />
         <Route path="/coupons" element={<CouponList />} />
+        <Route path="/user/liked-popups" element={<LikedPopups />} /> 
+        <Route path="/user/liked-items" element={<LikedItems />} />
       </Routes>
     </Router>
   );
