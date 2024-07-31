@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getReservations } from '../api/reservations';
+import OrderModal from './Modal'; // 모달 컴포넌트
+import ReservationDetail from './ReservationDetail'; // 예약 상세 컴포넌트
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components/styles/ReservationList.css';
 
@@ -16,6 +18,8 @@ function ReservationList() {
   const [totalPages, setTotalPages] = useState(0);
   const [status, setStatus] = useState('READY');
   const [searchParams, setSearchParams] = useSearchParams();
+  const [selectedReservationId, setSelectedReservationId] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const fetchReservations = async () => {
@@ -46,6 +50,16 @@ function ReservationList() {
     setStatus(newStatus);
     setSearchParams({ status: newStatus, page: 0 });
     setPage(0); // 페이지를 0으로 초기화
+  };
+
+  const handleCardClick = (reservationId) => {
+    setSelectedReservationId(reservationId);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSelectedReservationId(null);
   };
 
   const getStatusText = (status) => {
@@ -89,7 +103,12 @@ function ReservationList() {
         <p>예약 목록이 없습니다!</p>
       ) : (
         reservations.map((reservation, index) => (
-          <div key={index} className="reservation mb-3 p-3 border rounded">
+          <div 
+            key={index} 
+            className="reservation mb-3 p-3 border rounded" 
+            onClick={() => handleCardClick(reservation.id)}
+            style={{ cursor: 'pointer' }}
+          >
             <p><strong>예약번호:</strong> {reservation.id}</p>
             <p><strong>팝업 이름:</strong> {reservation.name}</p>
             <p><strong>날짜:</strong> {reservation.slotDate}</p>
@@ -129,6 +148,9 @@ function ReservationList() {
           다음
         </button>
       </div>
+      <OrderModal show={showModal} handleClose={handleCloseModal}>
+        {selectedReservationId && <ReservationDetail reservationId={selectedReservationId} />}
+      </OrderModal>
     </div>
   );
 }

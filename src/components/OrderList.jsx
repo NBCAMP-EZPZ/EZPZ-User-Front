@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getOrders } from '../api/orders';
-import OrderModal from './OrderModal';
+import OrderModal from './Modal';
 import OrderDetail from './OrderDetail';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components/styles/OrderList.css';
