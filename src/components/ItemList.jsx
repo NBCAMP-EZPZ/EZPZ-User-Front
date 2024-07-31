@@ -2,9 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
-import { getItems } from '../api/items';
+import { getItems, getItemDetail } from '../api/items';
+import { addToCart } from '../api/cart'; // import addToCart from cart.js
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components/styles/ItemList.css';
+import ItemDetailModal from './ItemDetailModal';
 
 const primaryColor = '#071952';
 
@@ -17,6 +19,8 @@ function ItemList() {
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const [status, setStatus] = useState(searchParams.get('status') || 'all');
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -65,6 +69,27 @@ function ItemList() {
     }
   };
 
+  const handleItemClick = async (itemId) => {
+    try {
+      const itemDetail = await getItemDetail(itemId);
+      setSelectedItem(itemDetail);
+      setShowModal(true);
+    } catch (error) {
+      setError("Failed to fetch item details.");
+    }
+  };
+
+  const handleAddToCart = async (cartItem) => {
+    try {
+      await addToCart(cartItem);
+      alert('Item added to cart!');
+    } catch (error) {
+      alert('Failed to add item to cart.');
+    }
+  };
+
+  const handleCloseModal = () => setShowModal(false);
+
   return (
     <div className="container mt-4">
       <h3>굿즈 목록</h3>
@@ -95,7 +120,12 @@ function ItemList() {
       ) : (
         <div className="item-list">
           {items.map((item) => (
-            <div key={item.itemId} className="item-card card mb-3 shadow-sm">
+            <div 
+              key={item.itemId} 
+              className="item-card card mb-3 shadow-sm"
+              onClick={() => handleItemClick(item.itemId)}
+              style={{ cursor: 'pointer' }}
+            >
               <img src={item.image} className="card-img-top" alt={item.name} />
               <div className="card-body">
                 <h5 className="card-title">{item.name}</h5>
@@ -138,6 +168,12 @@ function ItemList() {
           다음
         </button>
       </div>
+      <ItemDetailModal 
+        show={showModal} 
+        handleClose={handleCloseModal} 
+        item={selectedItem} 
+        handleAddToCart={handleAddToCart} 
+      />
     </div>
   );
 }

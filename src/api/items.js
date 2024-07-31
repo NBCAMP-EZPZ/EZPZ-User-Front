@@ -15,3 +15,12 @@ export const getItems = async (popupId, itemStatus, page = 0) => {
     throw error;
   }
 };
+
+export const getItemDetail = async (id) => {
+    try {
+        const response = await axiosInstance.get(`/api/v1/items/${id}`);
+        return response.data.data;
+    } catch (error) {
+        throw error;
+    }
+};
