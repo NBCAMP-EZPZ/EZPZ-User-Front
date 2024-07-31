@@ -100,7 +100,7 @@ function PopupInfo() {
             <button
               className="btn btn-primary"
               style={{ backgroundColor: primaryColor }}
-              onClick={() => navigate(`/popup/${id}/reservations`)}
+              onClick={() => navigate(`/popup/${id}/slots`)}
             >
               예약 페이지
             </button>

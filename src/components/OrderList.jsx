@@ -4,6 +4,8 @@ import OrderModal from './Modal';
 import OrderDetail from './OrderDetail';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components/styles/OrderList.css';
+import Pagination from 'react-bootstrap/Pagination'; // Pagination 컴포넌트 추가
+
 
 const primaryColor = '#071952';
 
@@ -65,6 +67,10 @@ function OrderList() {
     }
   };
 
+  const currentPageGroup = Math.floor(page / 10);
+  const startPage = currentPageGroup * 10;
+  const endPage = Math.min(startPage + 10, totalPages);
+
   return (
     <div className="orders mt-4">
       <h3>주문 목록 조회</h3>
@@ -84,37 +90,15 @@ function OrderList() {
           </div>
         ))
       )}
-      <div className="pagination mt-4">
-        <button
-          className="btn pagination-btn"
-          onClick={() => handlePageChange(page - 1)}
-          disabled={page === 0}
-          style={{ backgroundColor: primaryColor, color: '#fff' }}
-        >
-          이전
-        </button>
-        {[...Array(totalPages).keys()].map((pageIndex) => (
-          <button
-            key={pageIndex}
-            className={`btn pagination-btn ${pageIndex === page ? 'btn-current' : ''}`}
-            onClick={() => handlePageChange(pageIndex)}
-            style={{
-              backgroundColor: pageIndex === page ? primaryColor : 'transparent',
-              color: pageIndex === page ? '#fff' : primaryColor,
-            }}
-          >
-            {pageIndex + 1}
-          </button>
+      <Pagination className="mt-4">
+        <Pagination.Prev onClick={() => handlePageChange(page - 1)} disabled={page === 0} />
+        {[...Array(endPage - startPage).keys()].map(p => (
+          <Pagination.Item key={p + startPage} active={p + startPage === page} onClick={() => handlePageChange(p + startPage)}>
+            {p + startPage + 1}
+          </Pagination.Item>
         ))}
-        <button
-          className="btn pagination-btn"
-          onClick={() => handlePageChange(page + 1)}
-          disabled={page === totalPages - 1}
-          style={{ backgroundColor: primaryColor, color: '#fff' }}
-        >
-          다음
-        </button>
-      </div>
+        <Pagination.Next onClick={() => handlePageChange(page + 1)} disabled={page === totalPages - 1} />
+      </Pagination>
       <OrderModal show={showModal} handleClose={handleCloseModal}>
         {selectedOrderId && <OrderDetail orderId={selectedOrderId} />}
       </OrderModal>

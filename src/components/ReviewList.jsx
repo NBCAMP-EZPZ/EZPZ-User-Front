@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { getReviews } from '../api/popups';
 import { FaStar } from 'react-icons/fa';
+import Pagination from 'react-bootstrap/Pagination';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components/styles/ReviewList.css';
 
@@ -73,37 +74,15 @@ function ReviewList({ popupId }) {
           </div>
         ))
       )}
-      <div className="pagination mt-4">
-        <button
-          className="btn pagination-btn"
-          onClick={() => handlePageChange(startPage - 1)}
-          disabled={startPage === 0}
-          style={{ backgroundColor: primaryColor, color: '#fff' }}
-        >
-          이전
-        </button>
-        {[...Array(endPage - startPage).keys()].map((pageIndex) => (
-          <button
-            key={startPage + pageIndex}
-            className={`btn pagination-btn ${startPage + pageIndex === page ? 'btn-current' : ''}`}
-            onClick={() => handlePageChange(startPage + pageIndex)}
-            style={{
-              backgroundColor: startPage + pageIndex === page ? primaryColor : 'transparent',
-              color: startPage + pageIndex === page ? '#fff' : primaryColor,
-            }}
-          >
-            {startPage + pageIndex + 1}
-          </button>
+      <Pagination className="mt-4">
+        <Pagination.Prev onClick={() => handlePageChange(page - 1)} disabled={page === 0} />
+        {[...Array(endPage - startPage).keys()].map(p => (
+          <Pagination.Item key={p + startPage} active={p + startPage === page} onClick={() => handlePageChange(p + startPage)}>
+            {p + startPage + 1}
+          </Pagination.Item>
         ))}
-        <button
-          className="btn pagination-btn"
-          onClick={() => handlePageChange(endPage)}
-          disabled={endPage >= totalPages}
-          style={{ backgroundColor: primaryColor, color: '#fff' }}
-        >
-          다음
-        </button>
-      </div>
+        <Pagination.Next onClick={() => handlePageChange(page + 1)} disabled={page === totalPages - 1} />
+      </Pagination>
     </div>
   );
 }
