@@ -31,3 +31,13 @@ export const createOrder = async (orderData) => {
         throw error;
     }
 }
+
+// 주문 취소 API
+export const cancelOrder = async (orderId) => {
+    try {
+        const response = await axiosInstance.patch(`/api/v1/orders/${orderId}`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
