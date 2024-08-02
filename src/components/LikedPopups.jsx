@@ -4,8 +4,6 @@ import { getLikedPopups } from '../api/liked';
 import Pagination from 'react-bootstrap/Pagination';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const primaryColor = '#071952';
-
 const LikedPopups = () => {
   const [popups, setPopups] = useState([]);
   const [loading, setLoading] = useState(true);

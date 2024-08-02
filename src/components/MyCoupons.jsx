@@ -3,8 +3,6 @@ import { getMyCoupons } from '../api/coupons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Pagination from 'react-bootstrap/Pagination';
 
-const primaryColor = '#071952';
-
 function MyCoupons() {
     const [coupons, setCoupons] = useState([]);
     const [loading, setLoading] = useState(true);

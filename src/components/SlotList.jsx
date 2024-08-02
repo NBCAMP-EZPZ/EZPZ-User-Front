@@ -28,7 +28,6 @@ const SlotList = () => {
     const [slots, setSlots] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [status, setStatus] = useState('READY');
     const [showModal, setShowModal] = useState(false);
     const [selectedSlot, setSelectedSlot] = useState(null);
     const [numberOfPersons, setNumberOfPersons] = useState(1);

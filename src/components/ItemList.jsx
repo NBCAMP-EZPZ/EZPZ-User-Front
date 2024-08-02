@@ -9,9 +9,6 @@ import '../components/styles/ItemList.css';
 import ItemDetailModal from './ItemDetailModal';
 import Pagination from 'react-bootstrap/Pagination'; // Pagination 컴포넌트 추가
 
-
-const primaryColor = '#071952';
-
 function ItemList() {
     const { id } = useParams();
     const [searchParams, setSearchParams] = useSearchParams();

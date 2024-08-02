@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { getPopupDetail, likePopup } from '../api/popups';
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -77,7 +77,7 @@ function PopupInfo() {
                             <img
                                 key={index}
                                 src={image}
-                                alt={`Popup image ${index + 1}`}
+                                alt={`Popup ${index + 1}`}
                                 className="popup-image"
                                 onClick={() => handleImageClick(image)}
                                 style={{ cursor: 'pointer' }}

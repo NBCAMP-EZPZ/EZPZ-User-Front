@@ -5,8 +5,6 @@ import { getLikedItems } from '../api/liked';
 import Pagination from 'react-bootstrap/Pagination';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const primaryColor = '#071952';
-
 const LikedItems = () => {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
