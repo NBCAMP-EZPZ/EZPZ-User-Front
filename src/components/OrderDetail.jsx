@@ -56,6 +56,7 @@ const OrderDetail = ({ orderId }) => {
             <p><strong>주문번호:</strong> {order.orderId}</p>
             <p><strong>총액:</strong> {order.totalPrice}</p>
             <p><strong>상태:</strong> {getStatusText(order.orderStatus)}</p>
+            <p><strong>주문일:</strong> {new Date(order.orderDate).toLocaleString()}</p>
             <h5>주문 항목:</h5>
             <ul>
                 {order.orderedItems.map((item) => (
