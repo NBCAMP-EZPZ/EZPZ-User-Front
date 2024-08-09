@@ -59,7 +59,7 @@ function CouponList() {
                 <>
                     <div className="list-group">
                         {coupons.map(coupon => (
-                            <div key={coupon.id} className="list-group-item d-flex justify-content-between align-items-center">
+                            <div key={coupon.couponId} className="list-group-item d-flex justify-content-between align-items-center">
                                 <div>
                                     <h5>{coupon.name}</h5>
                                     <p><strong>할인 금액:</strong> {coupon.discountAmount}원</p>
@@ -67,7 +67,7 @@ function CouponList() {
                                 </div>
                                 <button
                                     className="btn btn-primary d-flex align-items-center"
-                                    onClick={() => handleDownload(coupon.id)}
+                                    onClick={() => handleDownload(coupon.couponId)}
                                     style={{ backgroundColor: primaryColor, color: '#fff' }}
                                 >
                                     <FaDownload className="me-1" /> 다운로드
