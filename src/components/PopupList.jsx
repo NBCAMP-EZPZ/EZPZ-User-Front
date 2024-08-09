@@ -9,7 +9,7 @@ function PopupList() {
   const [popups, setPopups] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [popupStatus, setPopupStatus] = useState('in_progress');
+  const [popupStatus, setPopupStatus] = useState('IN_PROGRESS');
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const navigate = useNavigate();
@@ -61,9 +61,9 @@ function PopupList() {
       <div className="row mb-4">
         <div className="col">
           <select className="form-select custom-dropdown" value={popupStatus} onChange={handleStatusChange}>
-            <option value="in_progress">진행 중</option>
-            <option value="scheduled">오픈 전</option>
-            <option value="completed">종료</option>
+            <option value="IN_PROGRESS">진행 중</option>
+            <option value="SCHEDULED">오픈 전</option>
+            <option value="COMPLETED">종료</option>
           </select>
         </div>
       </div>
