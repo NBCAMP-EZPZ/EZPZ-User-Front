@@ -95,7 +95,7 @@ function OrderList() {
             <p><strong>주문번호:</strong> {order.orderId}</p>
             <p><strong>총액:</strong> {order.totalPrice}</p>
             <p><strong>상태:</strong> {getStatusText(order.orderStatus)}</p>
-            <p><strong>주문날짜:</strong> {order.orderDate}</p>
+            <p><strong>주문날짜:</strong> {new Date(order.orderedAt).toLocaleString()}</p>
             {order.orderStatus === 'ORDER_COMPLETED' && (
               <button
                 className="btn btn-danger position-absolute end-0 me-2 d-flex align-items-center" // position-absolute 및 end-0 클래스 추가

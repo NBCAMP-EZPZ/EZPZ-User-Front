@@ -4,7 +4,7 @@ import { createOrder } from '../api/orders';
 import Modal from 'react-bootstrap/Modal';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../components/styles/CartPage.css'; // CSS 파일 임포트
+import '../components/styles/CartPage.css';
 
 const primaryColor = '#071952';
 
@@ -78,8 +78,15 @@ const CartPage = () => {
     };
 
     const handleOrderClick = async () => {
+        if (selectedItems.length === 0) {
+            alert('최소 1개 이상의 아이템을 선택해주세요.');
+            return;
+        }
+    
         try {
-            await createOrder({ cartIdRequestList: selectedItems.map((id) => ({ cartId: id })) });
+            // cartIdList 키에 배열을 담아 요청
+            const orderData = { cartIdList: selectedItems };
+            await createOrder(orderData);
             alert('주문이 완료되었습니다.');
             window.location.reload(); // 화면 새로고침
         } catch (error) {
