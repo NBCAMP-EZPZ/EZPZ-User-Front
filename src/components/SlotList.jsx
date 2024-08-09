@@ -54,7 +54,7 @@ const SlotList = () => {
 
     const handleReservation = async () => {
         try {
-            await createReservation({ slotId: selectedSlot.id, numberOfPersons });
+            await createReservation({ slotId: selectedSlot.slotId, numberOfPersons });
             alert('예약이 완료되었습니다.');
             navigate('/user/reservations'); // 예약 내역 보기 페이지로 이동
         } catch (error) {
@@ -85,7 +85,7 @@ const SlotList = () => {
                 <>
                     <div className="list-group">
                         {slots.map(slot => (
-                            <div key={slot.id} className="list-group-item d-flex justify-content-between align-items-center">
+                            <div key={slot.slotId} className="list-group-item d-flex justify-content-between align-items-center">
                                 <div>
                                     <p><strong>날짜:</strong> {slot.slotDate}</p>
                                     <p><strong>시간:</strong> {slot.slotTime}</p>

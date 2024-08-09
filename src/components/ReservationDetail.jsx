@@ -51,8 +51,8 @@ const ReservationDetail = ({ reservationId }) => {
 
     return (
         <div>
-            <p><strong>예약번호:</strong> {reservation.id}</p>
-            <p><strong>팝업 이름:</strong> {reservation.name}</p>
+            <p><strong>예약번호:</strong> {reservation.reservationId}</p>
+            <p><strong>팝업 이름:</strong> {reservation.popupName}</p>
             <p><strong>날짜:</strong> {reservation.slotDate}</p>
             <p><strong>시간:</strong> {reservation.slotTime}</p>
             <p><strong>상태:</strong> {getStatusText(reservation.reservationStatus)}</p>
