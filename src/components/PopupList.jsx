@@ -77,7 +77,7 @@ function PopupList() {
           >
             <img src={popup.thumbnailUrl} className="card-img-top" alt={popup.name} />
             <div className="card-body">
-              <h5 className="card-title">{popup.name}</h5>
+              <h5 className="card-title">{popup.popupName}</h5>
               <p className="card-text">주최: {popup.companyName}</p>
               <p className="card-text">좋아요 ♥︎ {popup.likeCount} 개</p>
             </div>
