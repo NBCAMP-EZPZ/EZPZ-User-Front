@@ -62,7 +62,7 @@ function PopupInfo() {
             <div className="card">
                 <img src={popup.thumbnailUrl} className="card-img-top" alt={popup.name} />
                 <div className="card-body">
-                    <h3 className="card-title">{popup.name}</h3>
+                    <h3 className="card-title">{popup.popupName}</h3>
                     <h5 className="card-text">{popup.description}</h5>
 
                     <hr />

@@ -22,13 +22,13 @@ const ItemDetailModal = ({ show, handleClose, item, handleAddToCart }) => {
     };
 
     const handleAddClick = () => {
-        handleAddToCart({ itemId: item.id, quantity: parseInt(quantity, 10) });
+        handleAddToCart({ itemId: item.itemId, quantity: parseInt(quantity, 10) });
         handleClose();
     };
 
     const handleLike = async () => {
         try {
-            await likeItem(item.id);
+            await likeItem(item.itemId);
             setLiked(true);
         } catch (error) {
             console.error('아이템 좋아요 실패 :(', error);

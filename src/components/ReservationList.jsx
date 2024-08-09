@@ -154,9 +154,9 @@ function ReservationList() {
             className="reservation mb-3 p-3 border rounded position-relative d-flex align-items-center" // position-relative 추가
             style={{ cursor: 'pointer' }}
           >
-            <div onClick={() => handleCardClick(reservation.id)} style={{ flex: 1 }}>
-              <p><strong>예약번호:</strong> {reservation.id}</p>
-              <p><strong>팝업 이름:</strong> {reservation.name}</p>
+            <div onClick={() => handleCardClick(reservation.reservationId)} style={{ flex: 1 }}>
+              <p><strong>예약번호:</strong> {reservation.reservationId}</p>
+              <p><strong>팝업 이름:</strong> {reservation.popupName}</p>
               <p><strong>날짜:</strong> {reservation.slotDate}</p>
               <p><strong>시간:</strong> {reservation.slotTime}</p>
               <p><strong>상태:</strong> {getStatusText(reservation.reservationStatus)}</p>
@@ -172,7 +172,7 @@ function ReservationList() {
             {reservation.reservationStatus === 'FINISHED' && (
               <button
                 className="btn btn-primary d-flex align-items-center review-button" // review-button 클래스 추가
-                onClick={(e) => { e.stopPropagation(); handleReviewClick(reservation.id); }}
+                onClick={(e) => { e.stopPropagation(); handleReviewClick(reservation.reservationId); }}
               >
                 <FaEdit className="me-1" /> 리뷰 작성
               </button>
