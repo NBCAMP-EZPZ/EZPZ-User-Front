@@ -1,19 +1,13 @@
 [build]
-  functions = "netlify/functions"  # Netlify Functions가 위치한 디렉토리
-  publish = "build"  # 빌드된 정적 파일이 위치한 디렉토리
-
-[[headers]]
-for = "/*"
-[headers.values]
-  Access-Control-Allow-Origin = "*"  # CORS를 허용
-  Referrer-Policy = "strict-origin-when-cross-origin"  # 리퍼러 정책 설정
+  publish = "build"
+  command = "npm run build"
 
 [[redirects]]
   from = "/api/*"
-  to = "/.netlify/functions/proxy"  # 모든 /api/* 경로 요청을 Netlify Function으로 프록시
-  status = 200  # HTTP 200 상태 코드를 반환
+  to = "https://ezpz-alb-1989368963.ap-northeast-2.elb.amazonaws.com/api/:splat"
+  status = 200
 
 [[redirects]]
   from = "/*"
-  to = "/index.html"  # 다른 모든 요청을 React 앱의 index.html로 리디렉션
+  to = "/index.html"
   status = 200
