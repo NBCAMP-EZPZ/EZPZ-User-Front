@@ -164,7 +164,7 @@ function ReservationList() {
             {reservation.reservationStatus === 'READY' && (
               <button
                 className="btn btn-danger d-flex align-items-center" // position-absolute 및 중앙 정렬 추가
-                onClick={(e) => { e.stopPropagation(); handleCancelReservation(reservation.id); }}
+                onClick={(e) => { e.stopPropagation(); handleCancelReservation(reservation.reservationId); }}
               >
                 ✖︎ 취소
               </button>
