@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# 🏬 EZPZ
+![Frame 3](https://github.com/user-attachments/assets/9db7d2ef-fa15-402b-a514-5e0ef5e414d7)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**EZPZ**는 `'Easy Popup Zone'`의 약자로, 사용자들에게 간편하고 직관적인 팝업 스토어 경험을 제공하는 것을 목표로 합니다. EZPZ는 최신 팝업 트렌드를 한눈에 볼 수 있는 허브 역할을 하며, 사용자가 쉽고 빠르게 예약하고 원하는 굿즈를 구매할 수 있도록 돕습니다. EZPZ를 통해 팝업 스토어의 모든 과정을 손쉽게 관리하고 즐길 수 있는 최적의 공간을 제공하여, 트렌드에 민감한 MZ 세대의 기대를 충족시키고자 합니다.
+</br></br>
 
-## Available Scripts
+## ✔️ GitHub 주소
+### Backend
+- User : https://github.com/NBCAMP-EZPZ/EZPZ-User
+- Host : https://github.com/NBCAMP-EZPZ/EZPZ-Host
+- Admin : https://github.com/NBCAMP-EZPZ/EZPZ-Admin
 
-In the project directory, you can run:
+### FrontEnd
+- User : https://github.com/NBCAMP-EZPZ/EZPZ-User-Front
+- Host : https://github.com/NBCAMP-EZPZ/EZPZ-Host-Front
+- Admin : https://github.com/NBCAMP-EZPZ/EZPZ-Admin-Front
+</br></br>
 
-### `npm start`
+## ✔️ 주요 기능
+### 👤 User
+- 팝업 목록 조회
+- 팝업 상세 조회
+- 팝업 굿즈 목록 조회
+- 팝업 굿즈 상세 조회
+- 굿즈 장바구니 담기
+- 굿즈 주문
+- 팝업 오프라인 예약 목록 조회
+- 팝업 오프라인 예약 상세 조회
+- 팝업 오프라인 예약 등록
+- 팝업, 굿즈 좋아요
+- 좋아요 목록 조회
+- 쿠폰 목록 조회
+- 쿠폰 선착순 다운로드
+</br></br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## ✨ Team EZPZ
+|여운호|이희수|이민정|유동현|
+|:-:|:-:|:-:|:-:|
+|<img src="https://avatars.githubusercontent.com/u/122009132?v=4" height=200 width=200> | <img src="https://avatars.githubusercontent.com/u/114149212?v=4" height=200 width=200> | <img src="https://avatars.githubusercontent.com/u/60657536?v=4" height=200 width=200> | <img src="https://avatars.githubusercontent.com/u/64765991?v=4" height=200 width=200>|
+|[@uh1205](https://github.com/uh1205)|[@llocr](https://github.com/llocr)|[@M1ngD0ng](https://github.com/M1ngD0ng)|[@ydh5017](https://github.com/ydh5017)|
